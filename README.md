@@ -15,7 +15,7 @@ The method is demonstrated using the DORA through the perspectives of impacted s
   Contains the LaTeX source, bibliography, images, and supporting material for the MSc dissertation, as well as the thesis PDF and extended summary. 
 
 - `GenAI_Tools/`  
-  Contains a historical snapshot of agent and skill definitions. It is retained for reference and is not the active source of methodology instructions. These should be copied into the skills and agents folder of the coding agent of your choice.
+  Contains a historical snapshot of agent and skill definitions. It is retained for reference. These should be copied into the skills and agents folder of the coding agent of your choice.
 
 - `Methodology/`  
   Contains the human-supervised methodology pipeline, stakeholder case artefacts, validation tools, and tests used to develop regulation-aware ArchiMate viewpoints.
