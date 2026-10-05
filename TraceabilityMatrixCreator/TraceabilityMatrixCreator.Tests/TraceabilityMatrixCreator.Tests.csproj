@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
+    <PackageReference Include="xunit.v3" Version="4.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="4.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="EPPlus" Version="8.5.3" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelCreator\ExcelCreator.csproj" />
+    <ProjectReference Include="..\TraceabilityMatrixCreator.App\TraceabilityMatrixCreator.App.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Documents\L_2022333EN.01000101.xml.html"
+          Link="Fixtures\DORA.html"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Documents\L_2022333EN.01008001.xml.html"
+          Link="Fixtures\NIS2.html"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Documents\L_2019151EN.01001501.xml.html"
+          Link="Fixtures\CSA.html"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Documents\L_202401183EN.000101.fmx.xml.html"
+          Link="Fixtures\EIDAS2.html"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures\dora_in_scope_row_manifest.json"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures\dora_amendment_id_expectations.json"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

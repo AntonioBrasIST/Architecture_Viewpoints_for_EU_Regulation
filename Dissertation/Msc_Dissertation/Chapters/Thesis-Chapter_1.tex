@@ -1,0 +1,118 @@
+% #############################################################################
+% This is Chapter 1
+% !TEX root = ../main.tex
+% #############################################################################
+% Change the Name of the Chapter i the following line
+\fancychapter{Introduction}
+% The following line allows to ref this chapter
+\label{chap:intro}
+
+The \ac{EU} had a surge in cybersecurity legislation in recent years, creating many granular regulations, one of which the \ac{DORA}. This fragmented landscape creates a significant architectural challenge for organizational governance, where compliance serves as a primary constraint shaping organizational structures and technical dependencies.
+
+A critical gap remains between descriptive legal prose and the formal models required for operational management. Traditional manual \ac{RE} is increasingly inadequate for managing the volume and complexity of these concurrent obligations. This work addresses this gap by proposing a refined, viewpoint-driven architectural method grounded in ISO/IEC/IEEE 42010 and accelerated with the use of \ac{GenAI}. The following subchapters introduce the project context and motivation, objectives,  contributions, and the structure of this dissertation.
+% ##################################78%###########################################
+\section{Context and Motivation}
+
+The legal framework is a major constraint for all enterprises, notably when dealing with an increasing number of legal regulations or when their complexity rises, as in the financial sector\cite{practiceEnterpriseModelling}.
+
+Recent legislative initiatives, such as \ac{DORA}, impose extensive compliance mandates on organizational processes, governance structures, and information technology landscapes. While these regulations are formulated as legal texts with compliance requirements, their impact is fundamentally operational.
+
+Translating abstract regulatory prose into actionable organizational change presents a critical enterprise architecture challenge. Traditional compliance approaches typically generate monolithic checklists or isolated requirement spreadsheets. While these artifacts capture legal obligations, they fail to address the diverse concerns of individual organizational stakeholders, such as Chief Information security officers, enterprise architects, or even developers. Each stakeholder requires visibility into how a given regulation directly impacts their specific operational footprint, which organizational assets or capabilities are affected, and the exact nature of that impact.
+
+\ac{EA}, and specifically the ArchiMate modelling language, offers a rigorous foundation for modelling complex systems and stakeholder concerns through the concept of viewpoints. Applying this foundation to \ac{EU} regulatory contexts creates a methodological challenge: translating legal requirements and stakeholder-specific operational concerns into justified viewpoints and tailored architectural views. 
+
+This dissertation is the spiritual successor of the Master's thesis \textit{Conceptual Modelling of Legal Compliance Requirements -- The cases of \ac{eIDAS2} and \ac{NIS2}}. That work established a methodical approach for structuring legal requirements into formal \ac{AD}s using the ArchiMate modelling language. Its baseline method combined an Excel-based traceability matrix with a hierarchical numbering system to link legal clauses to architectural elements. It also explored the use of generative services for review and documentation, including unit-based reviews with ChatGPT~5 and AI-enhanced JArchi integration using models such as LLaMA and Gemini.
+
+Building on these foundations, this dissertation proposes a method for identifying, defining, and instantiating stakeholder-centric viewpoints in the context of \ac{EU} regulation, with \ac{DORA} as its regulatory scope. \ac{GenAI} is used as an accelerator and method stressor to support the controlled creation and review of \ac{AD}s. By formalising stakeholder concerns in relation to evidenced operational context and relevant legal requirements, the method guides the generation of ArchiMate views that represent the regulation's stakeholder-specific footprint. The resulting artefacts are intended to provide clear, role-tailored transparency into the responsibilities, dependencies, and regulatory impacts relevant to a stakeholder's operational domain.
+
+It is fundamental to stress that this work does not aim to provide authoritative legal interpretations of \ac{EU} legislation, automate compliance decisions or certification processes, replace legal or architectural expertise with artificial intelligence, or define new regulatory requirements or assess organizational compliance.
+\ac{GenAI} is used exclusively as a support tool and a method stressor for identifying ambiguities, not for decision making.
+
+\section{Objectives}
+
+The primary objective of this work is to develop a method that identifies and formalizes stakeholder-specific viewpoints, aligned with the ISO/IEC/IEEE 42010 standard, to systematically translate legislative requirements into tangible operational footprints using the ArchiMate modelling language. 
+
+In accordance with \ac{DSRM}, this research pursues this objective by designing and demonstrating a purposeful artifact: a human-supervised methodology for discovering, specifying, and materialising stakeholder-specific, regulation aware ArchiMate viewpoints \cite{PeffersEtAl2007}. The artifact comprises a repeatable process, explicit evidence and traceability rules, validation gates, and a \ac{GenAI}-supported implementation. The resulting architectural descriptions are instantiations of the artifact, rather than the sole research contribution.
+
+The secondary objective is to create \ac{AD}s that are sufficiently comprehensible for their intended stakeholders to inspect, challenge, and enrich the viewpoint from which they are derived. Stakeholder feedback may introduce corrections, additional operational context, concerns, or scope refinements, which can be incorporated into the viewpoint. In this way, a generated architecture description becomes not only a communication artefact, but also a feedback mechanism for improving the quality and relevance of subsequent viewpoint generations.
+
+The research proposition of this thesis is that a human-supervised methodology which anchors regulatory requirements in binding legal sources, connects them to documented stakeholder operational evidence, and applies explicit scope, relationship, and approval rules can systematically derive stakeholder-specific ArchiMate viewpoints. The resulting architectural descriptions preserve the provenance of represented requirements, operational facts, and architectural relationships, while making relevant responsibilities, dependencies, and regulatory context of the stakeholder available for structured inspection.
+
+Furthermore, the proposition holds that such descriptions can function as feedback artefacts: an intended stakeholder can use them to identify omissions, corrections, additional concerns, or relevant operational context, which may be incorporated into later iterations of the viewpoint.
+
+\section{Contributions}
+
+Guided by \ac{DSRM}, this research identifies a regulatory-modelling problem, defines objectives for a purposeful artefact, designs and develops that artefact, and demonstrates its application in the \ac{DORA} context \cite{PeffersEtAl2007}. The contributions of this dissertation are therefore methodological and artefactual. They do not constitute an authoritative legal interpretation of \ac{DORA}, an automated compliance assessment, or evidence of organisational compliance.
+
+\begin{enumerate}
+    \item \textbf{An evidence-grounded methodology for stakeholder-specific regulatory viewpoints.}
+    The thesis contributes a repeatable method for discovering stakeholder operational context, identifying regulatory relevance, defining viewpoint scope, and materialising stakeholder-specific ArchiMate viewpoints and views. The method connects regulation-aware modelling to the documented responsibilities, dependencies, concerns, and operational environment of the stakeholder.
+
+    \item \textbf{A dual-source traceability and evidence-control approach.}
+    The methodology establishes explicit links from architectural elements and relationships to both binding legal sources and documented operational evidence. It introduces rules for scope, relationship selection, ownership, and approval that prevent unsupported legal or architectural inferences from being silently incorporated into the resulting artefacts.
+
+    \item \textbf{A feedback-oriented architecture-description process.}
+    The generated \acp{AD} are designed not only to communicate regulatory impacts to their intended stakeholders, but also to support structured feedback. Stakeholders may inspect a view and identify missing context, incorrect assumptions, additional concerns, or scope refinements, which can subsequently enrich the viewpoint specification and inform later generations.
+
+    \item \textbf{A \ac{DORA}-based demonstration of the methodology.}
+    The thesis applies the method to representative \ac{DORA} stakeholder scenarios, producing traceable ArchiMate artefacts and accompanying explanatory material. This demonstration shows how the methodology can be instantiated in a financial-sector regulatory context, while deliberately not claiming formal external validation, legal correctness, or unrestricted generalisability.
+\end{enumerate}
+
+\section{Document Structure}
+
+The remainder of this dissertation is organised as follows.
+The dissertation first establishes the conceptual and legal foundations required by the proposed method. Chapter~\ref{chap:cmodl} introduces conceptual modelling and enterprise architecture, including architecture descriptions, viewpoints and views, ISO/IEC/IEEE 42010, ArchiMate, and the role of generative language models in modelling work. Chapter~\ref{chap:euacts} then presents the relevant legal context, explaining the structure of \ac{EU} normative acts and introducing \ac{DORA} as the regulation used in the demonstration.
+
+The research is situated in relation to existing work in Chapter~\ref{chap:base}, which reviews regulatory modelling, automation, \ac{LLM} agents and skills, multi-agent debate, and the previous thesis from which this work develops. The problem analysis in Chapter~\ref{chap:ProbAnalysis} uses these foundations to identify the methodological need for stakeholder-specific, evidence-grounded regulatory viewpoints and controlled \ac{GenAI} support.
+
+The resulting methodology is presented in Chapter~\ref{chap:methd}. It discusses the evolution of the method and describes the complete pipeline through which stakeholder context, legal requirements, and architectural artefacts are produced and reconciled. Chapter~\ref{chap:demo} demonstrates the method in the \ac{DORA} context through architecture descriptions from representative banking-stakeholder perspectives. Finally, Chapter~\ref{chap:conclusion} concludes the dissertation by summarising its outcomes, discussing limitations, and outlining future work.
+
+%=======================================
+% TEXT DOES NOT EXIST BELLOW THIS LEVEL 
+%=======================================
+\iffalse
+% #############################################################################
+% =============================================================================
+% =============================================================================
+% #############################################################################
+\section{Objectives}
+This work is the spiritual successor of the Master thesis ``Conceptual Modelling of Legal Compliance Requirements - The cases of \ac{eIDAS2} and \ac{NIS2}''. The previous work established a methodical approach for structuring legal requirements into formal \ac{AD}s using the ArchiMate modelling language. The baseline method utilized an Excel-based traceability matrix and a hierarchical numbering system to link legal clauses directly to architectural elements.
+
+The previous work also included exploratory validation and documentation using generative services, specifically testing unit-based reviews with ChatGPT 5 and AI-enhanced JArchi integration with models like LLAMA and Gemini. This dissertation builds upon those foundations, expanding on the use of \ac{GenAI} for increased automation in the creation of \ac{AD}s and their validation, and addressing identified limitations in generalisation while changing the scope to \ac{DORA}.
+
+
+
+Within the design and development activity of \ac{DSRM} \cite{PeffersEtAl2007}, generative language models are used as constrained method support rather than as a source of architectural or legal authority. GenAI assists with bounded activities such as eliciting candidate operational facts, structuring regulatory-architectural correspondences, identifying potential omissions, and synthesising candidate views. Every consequential output remains subject to evidence anchoring, formal validation, and explicit human approval, preserving the verifiability and end to end traceability of the resulting models.
+
+The methodology is demonstrated and evaluated in representative \ac{DORA} stakeholder cases. Its utility, quality, and efficacy are assessed through the traceability of model elements to source evidence and legal duties, ArchiMate conformance and structural validity, clarity and modularity of the resulting viewpoints, and their interpretability for the relevant stakeholders. The evaluation results are then used to refine the artifact through iterative design.
+
+\section{Contributions}
+
+The primary scientific contribution of this work is of methodological nature and is placed at the intersection of systems architecture, regulatory \ac{RE} and conceptual modelling. In particular, the work contributes to the state of the art by:
+\begin{itemize}
+    \item \textbf{O1 - Methodological refinement of viewpoint-based regulatory architecture modelling:} This objective defines the core scientific contribution of the dissertation, which is to critically analyse and improve an existing architectural method for representing regulatory requirements as \ac{AD}s, focusing on its applicability to multiple EU normative acts. This refinement explicitly targets:
+    \begin{itemize}
+        \item Clearer separation of concerns through viewpoints;
+        \item Preservation of traceability between legal text and architectural elements.
+    \end{itemize}
+    \item \textbf{O2 - Explicit and systematic identification of architectural viewpoints:} Define and operationalise a systematic procedure for identifying, defining, and documenting architectural viewpoints in the context of regulatory compliance, grounded in ISO/IEC/IEEE 42010. The expected contribution here is not the creation of new viewpoints, but the method by which viewpoints can be elicited, justified, and refined (thus, enabling repeatable use, especially if across different regulatory domains).
+    \item \textbf{O3 - Controlled use of GenAI as method support and stressor:} \ac{GenAI} will be explicitly treated as method support and stressor, not as a source of architectural authority. The objective is to assess where and under which constraints \ac{GenAI} adds value to architectural consolidation. The objective is therefore to integrate generative language models into the architectural workflow in a controlled and constrained manner, supporting:
+    \begin{itemize}
+        \item Acceleration of modelling activities;
+        \item Consistency checking;
+        \item Identification of omissions and ambiguities.
+    \end{itemize}
+    \item \textbf{O4 - Partial automation of regulatory traceability artefacts:} Investigate and prototype the partial automation of regulatory traceability artefacts, particularly the construction and maintenance of traceability matrices, while preserving human oversight and verifiability (automation will be treated as an engineering enhancement to the method, not as an independent research contribution).
+    \item \textbf{O5 - \ac{DSRM} demonstration in the \ac{DORA} context:} Demonstrate the designed methodology in representative stakeholder-specific \ac{DORA} cases. The \ac{DORA} application serves to show the feasibility of applying the methodology in a regulatory context. This objective demonstrates the method's ability to:
+\begin{itemize}
+    \item Produce an auditable chain from operational evidence and legal duties to architectural elements and relationships;
+    \item Generate structurally valid, modular, and stakeholder-relevant ArchiMate viewpoints;
+    \item Support the clear representation of regulatory impacts, responsibilities, and dependencies;
+    \item Document practical limitations and implementation considerations encountered during its application.
+\end{itemize}
+    
+
+\end{itemize}
+
+Although the work includes applied engineering components (such as partial automation of traceability artifacts), its central scientific contribution lies in the conceptual structuring of the method, the architectural criteria adopted, and the validation of its analytical value for regulatory consolidation and knowledge dissemination.
+\fi

@@ -1,0 +1,30 @@
+% #############################################################################
+% This is Appendix B
+% !TEX root = ../main.tex
+% #############################################################################
+\chapter{Some Code}
+\label{chapter:appendixB}
+
+\begin{lstlisting}[frame=lines,style=XML,caption={Example of a XML file.},label=xmlEx]
+<?xml version="1.0" encoding="UTF-8"?>
+<StreamInfo version="2.0">
+    <Clip duration="PT01M0.00S">
+        <BaseURL>videos/</BaseURL>
+        <Description>svc_1</Description>
+        <Representation mimeType="video/SVC" codecs="svc" frameRate="30.00" bandwidth="401.90"
+            width="176" height="144" id="L0">
+            <BaseURL>svc_1/</BaseURL>
+            <SegmentInfo from="0" to="11" duration="PT5.00S">
+                <BaseURL>svc_1-L0-</BaseURL>
+            </SegmentInfo>
+        </Representation>
+        <Representation mimeType="video/SVC" codecs="svc" frameRate="30.00" bandwidth="1322.60"
+            width="352" height="288" id="L1">
+            <BaseURL>svc_1/</BaseURL>
+            <SegmentInfo from="0" to="11" duration="PT5.00S">
+                <BaseURL>svc_1-L1-</BaseURL>
+            </SegmentInfo>
+        </Representation>
+    </Clip>
+</StreamInfo>
+\end{lstlisting}

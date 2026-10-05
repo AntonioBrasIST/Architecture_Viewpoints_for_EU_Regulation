@@ -1,0 +1,59 @@
+% #############################################################################
+% This is Appendix A
+% !TEX root = ../main.tex
+% #############################################################################
+\chapter{Pipeline Overview}
+\label{chapter:appendixA}
+
+Bellow is a table that summarizes the pipeline, along with every agent and skill involved in each step, as well as the outputted artifact. For further detail, please refer to the following GitHub: \url{https://github.com/AntonioBrasIST/Architecture_Viewpoints_for_EU_Regulation}
+
+\begin{landscape}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.92}
+
+\begin{longtable}{@{}p{0.5cm}p{2.5cm}p{4.3cm}p{8.0cm}p{4.0cm}@{}}
+\hline
+\textbf{Step} & \textbf{Step name} & \textbf{Agents} & \textbf{Skills} & \textbf{Artifact} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Step} & \textbf{Step name} & \textbf{Agents} & \textbf{Skills} & \textbf{Artifact} \\
+\hline
+\endhead
+
+1 & Prompt Optimization & 0-prompt-maker & prompt-maker & 1\_optimized\_prompt.md \\
+\hline
+2 & Produce Interview & 1-interview-designer & regulation-blind-operational-discovery & 2\_interview.md \\
+\hline
+-- & Manual Elicitation & User & Manual elicitation and response recording & 2\_interview.md \\
+\hline
+3 & Context Discovery & 2-operational-footprint-extractor & extract-operational-footprint; evidence-grounded-relationship-ledger & 3\_operational\_footprint.md \\
+\hline
+4 & Stakeholder \& Concern ID & 3-stakeholder-classifier & extract-stakeholder-class-and-concerns & 4\_stakeholder\_classification.md \\
+\hline
+5 & Regulatory Relevance Analysis & 4-eu-legislation-identifier; 4a, 4b, 4c, 4d & legislation-relevance-evaluator; regulatory-consensus-moderator; legal-text-anchor-resolver; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; stakeholder-legal-role-mapper & 5\_regulatory\_relevance.md; \texttt{<REGULATION>-CELEX:<CELEX>.xlsx} \\
+\hline
+-- & Technology Selection Gate & -- & -- & -- \\
+\hline
+5a & Contextualized Regulation Overview & 4e-a, 4e-b, or 4e-c overview modeller & regulation-overview-designer; legal-text-anchor-resolver; stakeholder-legal-role-mapper; regulatory-view-structure; connected-view-validator; selected native-model skills & Views/0\_\texttt{<law-slug>}\_regulation\_overview.* \\
+\hline
+6 & Viewpoint Scope \& Justification & 5-stakeholder-viewpoint-scoper & viewpoint-scope-definer; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & 6\_viewpoint\_scope.md \\
+\hline
+7 & Viewpoint Generation & 6-viewpoint-materializer & viewpoint-creator; viewpoint-materializer; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & 7\_viewpoint.md; 7\_view\_graph.json \\
+\hline
+8 & Textual View Explanation & 7-view-narrative-explainer & view-narrative-explainer; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & Views/1\_view\_explanation.md \\
+\hline
+9 & Markdown Slide Diagrams & 8-informal-diagram-designer & informal-markdown-diagram-designer; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & Views/2\_slide\_diagrams.md \\
+\hline
+10a & ArchiMate XML Generation & 9a-archimate-model-generator & archimate-xml-generator; archimate-symbol-validator; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & Views/3\_view\_model.archimate \\
+\hline
+10b & LikeC4 Model Generation & 9b-likec4-model-generator & likec4-dsl; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & Views/3\_view\_model.c4 \\
+\hline
+10c & pyArchimate Generation & 9c-pyarchimate-model-generator & pyarchimate-syntax-reference; archimate-symbol-validator; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator; pyarchimate-model-generator & 3\_view\_model\_pyarchimate.py; Views/3\_view\_model\_pyarchimate.archimate \\
+\hline
+11 & Cross-Artifact Reconciliation & 10-view-cross-artifact-reconciler & view-cross-artifact-reconciler; legal-text-anchor-resolver; stakeholder-footprint-coverage; evidence-grounded-relationship-ledger; regulatory-view-structure; connected-view-validator & Audit report; synchronized view updates \\
+\hline
+\end{longtable}
+\end{landscape}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.methodology.example/schemas/view_graph.schema.json",
+  "title": "Evidence-backed stakeholder view graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "root_warning_threshold",
+    "stakeholder_anchor",
+    "nodes",
+    "relationships",
+    "views"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "root_warning_threshold": { "const": 30 },
+    "stakeholder_anchor": { "type": "string", "minLength": 1 },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "type"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "parent_id": { "type": "string", "minLength": 1 },
+          "documentation": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "target",
+          "type",
+          "meaning",
+          "archimate_candidate",
+          "visibility",
+          "evidence_refs",
+          "approval_status"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^REL-(OP|COV|ROLE|COMP)-.+$" },
+          "source": { "type": "string", "minLength": 1 },
+          "target": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "meaning": { "type": "string", "minLength": 1 },
+          "archimate_candidate": { "type": "string", "minLength": 1 },
+          "visibility": { "enum": ["visible", "semantic-only"] },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^(OP|CON|REQ|COV|ROLE|SRC)-.+$" }
+          },
+          "approval_status": { "const": "approved" },
+          "coverage_ownership": {
+            "enum": [
+              "Directly performed",
+              "Stakeholder-constrained",
+              "Externally owned",
+              "Not evidenced / unclear owner"
+            ]
+          }
+        }
+      }
+    },
+    "views": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "purpose", "node_ids", "relationship_ids"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 },
+          "node_ids": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "relationship_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "readability_approval": { "const": "approved" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Documents/">
+    <File Path="Documents/L_2019151EN.01001501.xml.mhtml" />
+    <File Path="Documents/L_2022333EN.01000101.xml.mhtml" />
+    <File Path="Documents/L_2022333EN.01008001.xml.mhtml" />
+    <File Path="Documents/L_202401183EN.000101.fmx.xml.mhtml" />
+  </Folder>
+  <Project Path="ExcelCreator/ExcelCreator.csproj" Id="ecd777ee-f25d-4f49-83e9-cd0a5e3e307c" />
+  <Project Path="TraceabilityMatrixCreator.App/TraceabilityMatrixCreator.App.csproj" Id="b1edfd42-b983-43fa-a449-40393eb6220f" />
+  <Project Path="TraceabilityMatrixCreator/TraceabilityMatrixCreator.csproj" />
+  <Project Path="TraceabilityMatrixCreator.Tests/TraceabilityMatrixCreator.Tests.csproj" />
+</Solution>
