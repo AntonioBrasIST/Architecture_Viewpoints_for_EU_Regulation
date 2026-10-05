@@ -1,0 +1,46 @@
+# Python bytecode, test output, and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+ENV/
+
+# Node package installations and package-manager diagnostics
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local editor and IDE state
+.idea/
+.vscode/
+.obsidian/
+*.code-workspace
+*.iml
+
+# Local secrets (keep shareable templates)
+.env
+.env.*
+!.env.example
+
+# Operating-system files, logs, and disposable backups
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
